@@ -1,12 +1,17 @@
-class K17_07:
-  def __init__(self, a1="Харків", a2="Одеса"):
-    self.p1 = a1
-    self.p2 = a2
-  pass
+class K18_04c:
+    def __init__(self, a1):
+        self.p1 = a1
+    def __add__(self, a2):
+        self.p1 = self.p1 + a2
+    def __str__ (self):
+        return '%s' % self.p1
 
-ob1 = K17_07("Київ", "Полтава")
-ob2 = K17_07("Львів")
-ob3 = K17_07()
-print(ob1.p1, ob1.p2)
-print(ob2.p1, ob2.p2)
-print(ob3.p1, ob3.p2)
+ob1 = K18_04c(21)
+ob1 + 15
+print(ob1)
+ob2 = K18_04c("...")
+ob2 + "download"
+print(ob2)
+ob3 = K18_04c([19, 7, 12])
+ob3 + [5, 9]
+print(ob3)
