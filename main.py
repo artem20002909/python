@@ -1,27 +1,28 @@
-class K18_04:
-    def __init__(self, a1):
-        self.p = a1
-    def func1(self):
-        print("K18_04 =", self.p - 13)
+import math
 
-class K18_04a(K18_04):
-    def func2(self, a2):
-        self.p *= a2
-        print("K18_04a =", self.p)
-
-class K18_04b(K18_04):
+class K18_07a:
+    def __init__(self, x):
+        self.plcolo = 3.14 * x * x
+class K18_07b:
+    def __init__(self, x):
+        self.pltrik = math.sqrt(3)
+class K18_07:
+    def __init__(self, x, y):
+        self.plzag = x * y
+    def func1(self, r1, r2, a, m=2, n=2):
+        self.p1 = K18_07a(r1)
+        self.p2 = K18_07a(r2)
+        self.p3 = K18_07b(a)
+        self.k1 = m
+        self.k2 = n
+    def func2(self):
+        self.func2 = self.plzag - self.p1.plcolo * self.k1\
+            -self.p2.plcolo * self.k2 - self.p3.pltrik
     def func3(self):
-        self.func3 = list(str(self.p))
-        print("list=", self.func3)
-    def func1(self):
-        i = 0
-        while i < len(self.func3):
-            print(i, "element:", self.func3[i])
-            i += 1
+        print("загальна площя = ", str(self.plzag), "см.квадратних")
+        print("залишок площі", str(self.func2), "см.квадратних")
 
-ob1 = K18_04a(37)
-ob2 = K18_04b('byte')
-ob1.func2(3)
-ob1.func1()
-ob2.func3()
-ob2.func1()
+ob = K18_07(30, 20)
+ob.func1(4, 6, 5)
+ob.func2()
+ob.func3()
