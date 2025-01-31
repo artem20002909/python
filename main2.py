@@ -1,22 +1,29 @@
-class K18_06:
-    def __init__(self, a1, a2):
-        self.p1 = a1
-        self.p2 = a2
-    def func1(self):
-        self.p1 =self.p1 / self.p2
-        print(self.p1)
+from tkinter import *
+root = Tk()
+cnv = Canvas(root, width=300, height=280)
+cnv.pack()
+root.title("tags")
 
-class K18_06a(K18_06):
-    def func1(self):
-        print("перехід 1")
-        K18_06.func1(self)
-        print("перехід 2")
+def func1(en):
+    cnv.move(kolo, 0, 40)
+    
+def func2(en):
+    cnv.itemconfig(kvadrat, fill="red", width=5)
 
-i = 1
-while i < 7:
-    if 2 < i and i < 5:
-        ob1 = K18_06a(7, i)
-    else:
-        ob1 = K18_06(10, i)
-    i += 1
-    ob1.func1()
+kvadrat=cnv.create_rectangle(20, 10, 70, 60, fill="cyan",
+                             outline="blue")
+
+kolo=cnv.create_oval([160, 10], [210, 60], fill="yellow")
+
+but1 = Button(root)
+but1["text"] = "kolo"
+but1.bind("<Button-1>", func2)
+
+but2 = Button(root)
+but2["text"] = "kvadrat color"
+but2.bind("<Button-1>", func1)
+
+but1.pack()
+but2.pack()
+root.mainloop()
+
